@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CommonService {
-  private counter = 0;
+  public counter = 0;
   constructor() { }
 
   public binhPhuong(n: number): number {
@@ -15,7 +15,7 @@ export class CommonService {
     return this.counter;
   }
 
-  public setCounter(n: number) {
+  public setCounter(n: number): void {
     this.counter = n
   }
 

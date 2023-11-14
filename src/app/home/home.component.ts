@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public name: string = 'thành';
   public age: number = 16;
-  public traiCay = ['tao', 'nho'];
+  public traiCay = [{ name: 'tao', gia: 12 }, { name: 'le', gia: 14 }, { name: 'dao', gia: -13 }];
   public districts: string[] = []
   public cities = [{
     city: 'An Giang',
@@ -39,8 +40,14 @@ export class HomeComponent implements OnInit {
     console.log('reset name');
     this.name = ''
   }
+  public counter = 0;
+  public counterBinhPhuong = 0;
+  constructor(private common: CommonService) { }
   public ngOnInit(): void {
-    console.log('check trai cay=', this.traiCay)
+    console.log('check trai cay=', this.traiCay);
+    this.counter = this.common.getCouter();
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
+    this.common.counter++;
   }
   public changeCity(event: any): void {
 

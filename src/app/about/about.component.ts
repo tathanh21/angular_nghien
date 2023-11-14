@@ -8,10 +8,12 @@ import { CommonService } from '../Services/common.service';
 })
 export class AboutComponent implements OnInit {
   public counter = 0;
+  myColor = "red"
   public counterBinhPhuong = 0;
   constructor(private common: CommonService) { }
   ngOnInit(): void {
     this.counter = this.common.getCouter();
-    this.counterBinhPhuong = this.common.binhPhuong(this.counter)
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
+    this.common.counter++;
   }
 }

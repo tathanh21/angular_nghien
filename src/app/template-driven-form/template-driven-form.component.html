@@ -1,7 +1,8 @@
 <p>template-driven-form works!</p>
-<form>
+<form (ngSubmit)="submitForm()">
     <label>Name:</label>
-    <input type="text" [(ngModel)]="name" />
+    <!-- <input type="text" [(ngModel)]="name" /> -->
+    <input type="text" name="nameá" [(ngModel)]="name" required>
     <br>
-    <button (click)="submitForm()" type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>

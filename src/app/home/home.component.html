@@ -31,9 +31,10 @@
         <th>Giá</th>
     </tr>
     <tr *ngFor="let trai of traiCay">
-        <td>{{ trai | uppercase }}</td>
+        <td>{{ trai.name | uppercase }}</td>
+        <td>{{ trai.gia | currency:'VND':'symbol':'1.2-2' }}</td>
         <!-- <td [ngClass]="{}">0</td> -->
-
+        <td [ngClass]="{'so-am':trai.gia<0}">{{ trai.gia | currency:'USD':'symbol':'1.2-2' }}</td>
     </tr>
 </table>
 <br>
@@ -45,3 +46,7 @@ Quận/Huyện
 <select id="district">
     <option *ngFor="let data1 of districts">{{data1}}</option>
 </select>
+
+<span>Couter: {{counter}}</span>
+<br>
+<span>Couter *2 = {{counterBinhPhuong}}</span>

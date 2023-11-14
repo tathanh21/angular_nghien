@@ -14,7 +14,6 @@ export class TemplateDrivenFormComponent implements OnInit {
   }
   constructor(private common: CommonService) { }
 
-
   public submitForm(): void {
     console.log('submit form: name=' + this.name);
     this.common.submitData(this.name)
